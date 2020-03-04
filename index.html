@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-<link rel="stylesheet" type="text/css" href="Chartcss.css">
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+<link rel="stylesheet" type="text/css" href="Chartcss.css"> -->
 <title>badmintonteam</title>
 </head>
 <body>
@@ -30,7 +30,7 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
 
   //CSVファイルを読み込む
   var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
-  req.open("get", "badmintonLevel.csv", true); // アクセスするファイルを指定
+  req.open("get", "badmintonData.csv", true); // アクセスするファイルを指定
   req.send(); // HTTPリクエストの発行
 
   // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
@@ -42,20 +42,20 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
       data = convertCSVtoArray(req.responseText);
       // data配列をデータごとの配列に入れなおす
       for(var i =0; i<data.length; i++){
-          name[i] = data[1][i];
-          gender[i] = data[i][2];
-          course[i] = data[i][3];
-          speed[i] = data[i][4];
+          name[i] = data[i][1];
+          grade[i] = data[i][2];
+          gender[i] = data[i][3];
+          level[i] = data[i][4];
       }
   }
   </script>
 
-<!-- <div id="container1" style="height:50%; width:50%"></div> -->
-<!-- <div id="container2" style="height:50%; width:50%"></div> -->
-<!-- <div id="container3" style="height:50%; width:50%"></div> -->
-<!-- <script type="text/javascript">
-</script> -->
-<!-- <div id="chartContainer" style="height:70%; width:70%">
+<!-- <div id="container1" style="height:50%; width:50%"></div>
+<div id="container2" style="height:50%; width:50%"></div>
+<div id="container3" style="height:50%; width:50%"></div>
+<script type="text/javascript">
+</script>
+<div id="chartContainer" style="height:70%; width:70%"> -->
 
 </body>
 </html>
