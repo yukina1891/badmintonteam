@@ -11,7 +11,7 @@
 <script>
 // CSVのデータを格納する各種変数
 var data = [];
-var name = [];
+var nam = [];
 var grade = [];
 var gender = [];
 var level = [];
@@ -42,7 +42,7 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
       data = convertCSVtoArray(req.responseText);
       // data配列をデータごとの配列に入れなおす
       for(var i =0; i<data.length-1; i++){
-          name[i] = data[i+1][0];
+          nam[i] = data[i+1][0];
           grade[i] = data[i+1][1];
           gender[i] = data[i+1][2];
           level[i] = data[i+1][3];
