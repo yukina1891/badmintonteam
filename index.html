@@ -41,7 +41,7 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
       // 読み込んだＣＳＶファイル配列で取得
       data = convertCSVtoArray(req.responseText);
       // data配列をデータごとの配列に入れなおす
-      for(var i =0; i<data.length; i++){
+      for(var i =0; i<data.length-1; i++){
           name[i] = data[i+1][0];
           grade[i] = data[i+1][1];
           gender[i] = data[i+1][2];
