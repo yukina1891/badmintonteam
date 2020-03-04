@@ -1,11 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+<link rel="stylesheet" type="text/css" href="Chartcss.css">
+<title>badmintonteam</title>
 </head>
 <body>
-    <h1>Hello World</h1>  
+
+<script>
+// CSVのデータを格納する各種変数
+var data = [];
+var name = [];
+var grade = [];
+var gender = [];
+var level = [];
+
+// 読み込んだCSVデータを二次元配列に変換する関数convertCSVtoArray()の定義
+function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列として渡される
+    var result = []; // 最終的な二次元配列を入れるための配列
+    var tmp = str.split("\n"); // 改行を区切り文字として行を要素とした配列を生成
+
+    // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
+    for(var i=0;i<tmp.length;++i){
+        result[i] = tmp[i].split(',');
+    }
+    return result;
+}
+
+  //CSVファイルを読み込む
+  var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
+  req.open("get", "badmintonLevel.csv", true); // アクセスするファイルを指定
+  req.send(); // HTTPリクエストの発行
+
+  // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
+
+  req.onload = function(){
+      // ここに処理を描く
+
+      // 読み込んだＣＳＶファイル配列で取得
+      data = convertCSVtoArray(req.responseText);
+      // data配列をデータごとの配列に入れなおす
+      for(var i =0; i<data.length; i++){
+          name[i] = data[1][i];
+          gender[i] = data[i][2];
+          course[i] = data[i][3];
+          speed[i] = data[i][4];
+      }
+  }
+  </script>
+
+<!-- <div id="container1" style="height:50%; width:50%"></div> -->
+<!-- <div id="container2" style="height:50%; width:50%"></div> -->
+<!-- <div id="container3" style="height:50%; width:50%"></div> -->
+<!-- <script type="text/javascript">
+</script> -->
+<!-- <div id="chartContainer" style="height:70%; width:70%">
+
 </body>
 </html>
