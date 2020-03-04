@@ -41,11 +41,11 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
       // 読み込んだＣＳＶファイル配列で取得
       data = convertCSVtoArray(req.responseText);
       // data配列をデータごとの配列に入れなおす
-      for(var i =0; i<data.length; i++){
-          name[i] = data[i][1];
-          grade[i] = data[i][2];
-          gender[i] = data[i][3];
-          level[i] = data[i][4];
+      for(var i =1; i<data.length; i++){
+          name[i] = data[i][0];
+          grade[i] = data[i][1];
+          gender[i] = data[i][2];
+          level[i] = data[i][3];
       }
   }
   </script>
