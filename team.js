@@ -19,7 +19,7 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
 
 //CSVファイルを読み込む
 var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
-req.open("get", "badmintonData.csv", true); // アクセスするファイルを指定
+req.open('GET', 'badmintonData.csv', true); // アクセスするファイルを指定
 req.send(); // HTTPリクエストの発行
 
 // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
