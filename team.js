@@ -17,23 +17,31 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     return result;
 }
 
-//CSVファイルを読み込む
-var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
-req.open('GET', 'badmintonData.csv', true); // アクセスするファイルを指定
-req.send(); // HTTPリクエストの発行
+var exeButton = document.getElementById("button");
+exeButton.disabled = true;       //実行ボタンを押せなくする
 
-// レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
+var fileInput = document.getElementById("csvfile");
+var reader = new FileReader();
 
-req.onload = function(){
-    // ここに処理を描く
+if(!(fileInput.value)){
+    fileInput.onchange = function(){
+        exeButton.disabled = false;      //ファイルが選択されたら実行ボタンを許可
+    };
+} else {
+    exeButton.disabled = false;      //元々ファイルが入力されているときは実行ボタンを許可
+}
 
-    // 読み込んだＣＳＶファイル配列で取得
-    data = convertCSVtoArray(req.responseText);
-    // data配列をデータごとの配列に入れなおす
-    for(var i = 0; i < data.length-1; i++){
-        namae[i] = data[i+1][0];
-        grade[i] = data[i+1][1];
-        gender[i] = data[i+1][2];
-        level[i] = data[i+1][3];
-    }
+function execute(){                   //実行ボタンが押されたら実行される
+    let file = fileInput.files[0];
+    reader.readAsText(file);
+    reader.onload = function(){
+        //console.log(reader.result);
+        data = convertCSVtoArray(reader.result);          //csvファイルのデータをdata配列に格納
+        for(var i = 0; i < data.length-1; i++){           //namae、grade、gender、levelにそれぞれデータを格納
+            namae[i] = data[i+1][0];
+            grade[i] = data[i+1][1];
+            gender[i] = data[i+1][2];
+            level[i] = data[i+1][3];
+        }
+    };
 }
