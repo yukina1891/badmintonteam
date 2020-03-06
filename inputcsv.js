@@ -5,6 +5,23 @@ var grade = [];
 var gender = [];
 var level = [];
 
+var exeButton = document.getElementById("button");
+exeButton.disabled = true;       //実行ボタンを押せなくする
+
+var fileInput = document.getElementById("csvfile");
+var teamnumInput = document.getElementById("teamnum");
+var reader = new FileReader();
+
+relesebtn();
+
+fileInput.onchange = function(){
+    relesebtn();      //ファイルが選択されたら実行ボタンを許可
+};
+
+teamnumInput.onchange = function(){
+    relesebtn();
+};
+
 // 読み込んだCSVデータを二次元配列に変換する関数convertCSVtoArray()の定義
 function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列として渡される
     var result = []; // 最終的な二次元配列を入れるための配列
@@ -17,18 +34,12 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     return result;
 }
 
-var exeButton = document.getElementById("button");
-exeButton.disabled = true;       //実行ボタンを押せなくする
-
-var fileInput = document.getElementById("csvfile");
-var reader = new FileReader();
-
-if(!(fileInput.value)){
-    fileInput.onchange = function(){
-        exeButton.disabled = false;      //ファイルが選択されたら実行ボタンを許可
-    };
-} else {
-    exeButton.disabled = false;      //元々ファイルが入力されているときは実行ボタンを許可
+function relesebtn(){
+    if((fileInput.value) && (teamnum.value > 1)){
+        exeButton.disabled = false;
+    } else {
+        exeButton.disabled = true;
+    }
 }
 
 function execute(){                   //実行ボタンが押されたら実行される
