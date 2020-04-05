@@ -5,8 +5,9 @@ var grade = [];
 var gender = [];
 var level = [];
 
-var exeButton = document.getElementById("button");
-exeButton.disabled = true;       //実行ボタンを押せなくする
+var btn = document.getElementById("button");
+// btn.disabled = true;       //実行ボタンを押せなくする
+// btn.style.opacity = 0.5;
 
 var fileInput = document.getElementById("csvfile");
 var teamnumInput = document.getElementById("teamnum");
@@ -19,7 +20,7 @@ fileInput.onchange = function(){
 };
 
 teamnumInput.onchange = function(){
-    relesebtn();
+    relesebtn();      //チーム数が選択されたら実行ボタンを許可
 };
 
 // 読み込んだCSVデータを二次元配列に変換する関数convertCSVtoArray()の定義
@@ -36,9 +37,11 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
 
 function relesebtn(){
     if((fileInput.value) && (teamnum.value > 1)){
-        exeButton.disabled = false;
+        btn.disabled = false;
+        btn.style.opacity = 1.0;
     } else {
-        exeButton.disabled = true;
+        btn.disabled = true;
+        btn.style.opacity = 0.5;
     }
 }
 
