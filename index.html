@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>-->
     <link rel="stylesheet" href="css/style.css">
-    <title>badmintonteam</title>
+    <title>チーム分け</title>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     <div class="content">
         <div class="block">
             <h3>このチーム分けツールは・・・</h3>
-            <p class="indent line">学年・性別・強さ(スポーツなど)がそれぞれ平均的になるようにチーム分けを行うツールです。</p>
+            <p class="indent">学年・性別・強さ(スポーツなどの)がそれぞれ平均的になるようにチーム分けを行うツールです。</p>
         </div>
         <div class="block">
             <h2>データ入力</h2>
@@ -21,31 +21,18 @@
             <p>チーム数を選択してください。
                 <select name="num" id="teamnum">
                     <option value="">-</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
+                    <script>
+                        for(var i = 2; i <= 10; i++) {
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                    </script>
                 </select>
             </p>
             <p><button type="button" onclick="execute()" id="button">チームを作る</button></p>
         </div>
         <div class="block">
             <h2>結果</h2>
+            <div id='output'></div>
         </div>
     </div>
     <script type="text/javascript" src="inputcsv.js"></script>
