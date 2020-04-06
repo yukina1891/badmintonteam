@@ -5,22 +5,19 @@ var grade = [];
 var gender = [];
 var level = [];
 
-var btn = document.getElementById("button");
-// btn.disabled = true;       //実行ボタンを押せなくする
-// btn.style.opacity = 0.5;
-
 var fileInput = document.getElementById("csvfile");
 var teamnumInput = document.getElementById("teamnum");
 var reader = new FileReader();
 
-relesebtn();
+var btn = document.getElementById("button");
+changebtn();
 
 fileInput.onchange = function(){
-    relesebtn();      //ファイルが選択されたら実行ボタンを許可
+    changebtn();      //ファイルが選択されたら実行ボタンを許可
 };
 
 teamnumInput.onchange = function(){
-    relesebtn();      //チーム数が選択されたら実行ボタンを許可
+    changebtn();      //チーム数が選択されたら実行ボタンを許可
 };
 
 // 読み込んだCSVデータを二次元配列に変換する関数convertCSVtoArray()の定義
@@ -35,8 +32,8 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     return result;
 }
 
-function relesebtn(){
-    if((fileInput.value) && (teamnum.value > 1)){
+function changebtn(){
+    if((fileInput.value) && (teamnumInput.value > 1)){
         btn.disabled = false;
         btn.style.opacity = 1.0;
     } else {
