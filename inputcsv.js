@@ -53,6 +53,6 @@ function execute(){                   //実行ボタンが押されたら実行�
         //     gender[i] = data[i+1][2];
         //     level[i] = data[i+1][3];
         // }
-        construct();
+        main();
     };
 }
