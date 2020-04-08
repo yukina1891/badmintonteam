@@ -36,6 +36,7 @@ function divGender() {
     m_ave = 0.0;
     w_ave = 0,0;
     for(var i = 0; i < total_num; i++) {
+        data[i+1][1] = parseFloat(data[i+1][1]);
         data[i+1][3] = parseFloat(data[i+1][3]);
         if(data[i+1][2] == 0) {
             m_mem[m_num] = data[i+1];
@@ -89,13 +90,13 @@ function checkGrade() {
 }
 
 function checkAve() {
-    
+
 }
 
 function createTeam() {
-    while() {
-        if(check()) {
+    // while() {
+    //     if(check()) {
 
-        }
-    }
+    //     }
+    // }
 }
