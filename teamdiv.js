@@ -84,10 +84,18 @@ function updateAve(team_ave, team) {
     }
 }
 
-function createTeam() {
+function checkGrade() {
     
 }
 
-function check() {
+function checkAve() {
     
+}
+
+function createTeam() {
+    while() {
+        if(check()) {
+
+        }
+    }
 }
