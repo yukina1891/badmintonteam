@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>-->
     <link rel="stylesheet" href="css/style.css">
     <title>チーム分け</title>
 </head>
@@ -11,10 +10,12 @@
 <body>
     <h1 class="title">チーム分け</h1>
     <div class="content">
+
         <div class="block">
             <h3>このチーム分けツールは・・・</h3>
-            <p class="indent">学年・性別・強さ(スポーツなどの)がそれぞれ平均的になるようにチーム分けを行うツールです。</p>
+            <div class="indent"><p>スポーツなどの"強さ"が平均的になるようにチーム分けを行うツールです。<br>さらに、"性別"や"学年"も平均的になるように条件を追加することもできます。</p></div>
         </div>
+
         <div class="block">
             <h2>データ入力</h2>
             <p>テンプレートファイル(<a href="example.csv">example.csv</a>)にデータを入力してファイルをアップロードしてください。<input type="file" id="csvfile"></p>
@@ -34,10 +35,12 @@
             </p>
             <p><button type="button" onclick="execute()" id="button">チームを作る</button></p>
         </div>
-        <div class="block">
+
+        <div class="block2">
             <h2>結果</h2>
-            <div id='output'></div>
+            <div class="container" id="output"></div>
         </div>
+
     </div>
     <script type="text/javascript" src="inputcsv.js"></script>
     <script type="text/javascript" src="teamdiv.js"></script>

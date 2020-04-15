@@ -47,12 +47,6 @@ function execute(){                   //実行ボタンが押されたら実行�
     reader.readAsText(file);
     reader.onload = function(){
         data = convertCSVtoArray(reader.result);          //csvファイルのデータをdata配列に格納
-        // for(var i = 0; i < data.length-1; i++){           //namae、grade、gender、levelにそれぞれデータを格納
-        //     namae[i] = data[i+1][0];
-        //     grade[i] = data[i+1][1];
-        //     gender[i] = data[i+1][2];
-        //     level[i] = data[i+1][3];
-        // }
         main();
     };
 }

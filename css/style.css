@@ -47,6 +47,35 @@ select{
     padding-bottom: 10px;
     border-bottom: 1px solid #d1d1d1;
 }
+.block2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .indent {
-    text-indent: 3em;
+    margin-left: 4em;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.item {
+    width: 12em;
+    margin: 0em 1em 3em 1em;
+    text-align: center;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+.item .box-title {
+    font-size: 1.2em;
+    background: #5fc2f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.item p {
+    padding: 15px 20px;
+    margin: 0;
 }
