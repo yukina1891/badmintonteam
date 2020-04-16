@@ -1,10 +1,3 @@
-// CSVのデータを格納する各種変数
-var data = [];
-var namae = [];
-var grade = [];
-var gender = [];
-var level = [];
-
 var fileInput = document.getElementById("csvfile");
 var teamnumInput = document.getElementById("teamnum");
 var reader = new FileReader();
