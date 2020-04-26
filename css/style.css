@@ -40,7 +40,6 @@ button:hover {
 select{
     width: 5em;
     box-sizing: border-box;
-    font-size: 1em;
     cursor: pointer;
 }
 .block {
