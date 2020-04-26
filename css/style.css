@@ -22,7 +22,6 @@ h1 {
     padding: 30px;
 }
 input {
-    /* font-size: 1rem; */
     cursor: pointer;
 }
 button {
@@ -30,7 +29,7 @@ button {
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    padding: 13px 0 13px 0;
+    padding: 13px 0;
     border-radius: 3px;
     box-sizing: border-box;
     cursor: pointer;
@@ -82,6 +81,12 @@ select{
     padding: 15px 20px;
     margin: 0;
 }
+.container2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+}
 
 @media (max-width: 600px) {
     .content {
@@ -91,7 +96,9 @@ select{
     .indent {
         padding-left: 2em;
     }
-    /* input {
-        font-size: 0.5rem;
-    } */
+    .container2 {
+        display: flex;
+        flex-direction: column;
+    }
+    
 }

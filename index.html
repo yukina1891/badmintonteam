@@ -20,21 +20,36 @@
         <div class="block">
             <h2>データ入力</h2>
             <ol>
-                <p><li>テンプレートファイル(<a href="example.csv">example.csv</a>)にデータを入力してファイルをアップロードしてください。<input type="file" id="csvfile"></li></p>
-                <p><li>チーム数を選択してください。
-                    <select name="num" id="teamnum">
-                        <option value="">-</option>
-                        <script>
-                            for(var i = 2; i <= 10; i++) {
-                                document.write('<option value="' + i + '">' + i + '</option>');
-                            }
-                        </script>
-                    </select>
-                </li></p>
-                <p><li>平均的にする条件を選択してください。
-                    <input class="indent" type="checkbox" id="gen">性別
-                    <input class="indent" type="checkbox" id="gre">学年
-                </li></p>
+                <li>
+                    <div class="container2">
+                        テンプレートファイル(<a href="example.csv">example.csv</a>)にデータを入力してファイルをアップロードしてください。
+                        <input type="file" id="csvfile">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="container2">
+                        チーム数を選択してください。
+                        <select name="num" id="teamnum">
+                            <option value="">-</option>
+                            <script>
+                                for(var i = 2; i <= 10; i++) {
+                                    document.write('<option value="' + i + '">' + i + '</option>');
+                                }
+                            </script>
+                        </select>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="container2">
+                        平均的にする条件を選択してください。
+                        <div>
+                            <input class="indent" type="checkbox" id="gen">性別
+                            <input class="indent" type="checkbox" id="gre">学年
+                        </div>
+                    </div>
+                </li>
             </ol>
             <p><button type="button" onclick="execute()" id="button">チームを作る</button></p>
         </div>
