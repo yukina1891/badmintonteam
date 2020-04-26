@@ -90,9 +90,9 @@ select{
 }
 
 @media (max-width: 600px) {
-    /* .title {
-        font-size: 24px;
-    } */
+    .title {
+        font-size: 1.5rem;
+    }
     .content {
         width: 100%;
         padding: 0 15px;
