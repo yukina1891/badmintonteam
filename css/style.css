@@ -23,7 +23,7 @@ h1 {
 }
 input {
     font-size: 1rem;
-    padding: 5px;
+    /* padding: 5px; */
     cursor: pointer;
 }
 button {
