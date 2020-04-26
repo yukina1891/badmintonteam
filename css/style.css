@@ -6,7 +6,7 @@ body {
 }
 .title {
     width: 100%;
-    font-size: 2rem;
+    /* font-size: 2rem; */
     font-weight: 300;
     color: white;
     background-color: rgb(60, 60, 60);
@@ -38,7 +38,7 @@ button:hover {
     background: linear-gradient(#1F85D8, #17619C);
 }
 select{
-    width: 5em;
+    width: 5rem;
     box-sizing: border-box;
     cursor: pointer;
 }
