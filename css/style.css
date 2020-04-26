@@ -21,13 +21,13 @@ h1 {
     padding: 30px;
 }
 input {
-    font-size: 1em;
+    font-size: 1rem;
     padding: 5px;
     cursor: pointer;
 }
 button {
     width: 230px;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: bold;
     color: #fff;
     padding: 13px 0 13px 0;
@@ -54,41 +54,41 @@ select{
     padding-top: 10px;
     padding-bottom: 10px;
 }
-/* .indent {
-    margin-left: 4em;
-} */
+.indent {
+    padding-left: 4rem;
+}
 .container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 .item {
-    width: 12em;
-    margin: 0em 1em 3em 1em;
+    width: 12rem;
+    margin: 0rem 1rem 3rem 1rem;
     text-align: center;
     background: #f1f1f1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
 }
 .item .box-title {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     background: #5fc2f5;
     padding: 4px;
     text-align: center;
     color: #FFF;
     font-weight: bold;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.05rem;
 }
 .item p {
     padding: 15px 20px;
     margin: 0;
 }
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
     .content {
-        width: 100%;
+        width: 50%;
         padding: 0 15px;
     }
     .indent {
-        margin-left: 2em;
+        padding-left: 2em;
     }
-} */
+}
