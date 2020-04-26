@@ -23,30 +23,32 @@
                 <li>
                     <div class="container2">
                         <div>テンプレートファイル(<a href="example.csv">example.csv</a>)にデータを入力してファイルをアップロードしてください。</div>
-                        <input type="file" id="csvfile">
+                        <input type="file" id="csvfile" class="item2">
                     </div>
                 </li>
 
                 <li>
                     <div class="container2">
                         <div>チーム数を選択してください。</div>
-                        <select name="num" id="teamnum">
-                            <option value="">-</option>
-                            <script>
-                                for(var i = 2; i <= 10; i++) {
-                                    document.write('<option value="' + i + '">' + i + '</option>');
-                                }
-                            </script>
-                        </select>
+                        <div class="item2">
+                            <select name="num" id="teamnum">
+                                <option value="">-</option>
+                                <script>
+                                    for(var i = 2; i <= 10; i++) {
+                                        document.write('<option value="' + i + '">' + i + '</option>');
+                                    }
+                                </script>
+                            </select>
+                        </div>
                     </div>
                 </li>
 
                 <li>
                     <div class="container2">
                         <div>平均的にする条件を選択してください。</div>
-                        <div>
-                            <input class="indent" type="checkbox" id="gen">性別
-                            <input class="indent" type="checkbox" id="gre">学年
+                        <div class="item2 container2">
+                            <input type="checkbox" id="gen">性別
+                            <div class="item3"><input type="checkbox" id="gre">学年</div>
                         </div>
                     </div>
                 </li>
