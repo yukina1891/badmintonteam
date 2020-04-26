@@ -79,3 +79,9 @@ select{
     padding: 15px 20px;
     margin: 0;
 }
+
+@media (max-width: 600px) {
+    .content {
+        width: 100%;
+    }
+}
