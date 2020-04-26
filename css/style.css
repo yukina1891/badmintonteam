@@ -2,6 +2,9 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
+h1 {
+    width: 100%;
+}
 .title {
     font-size: 32px;
     font-weight: 300;
@@ -51,9 +54,9 @@ select{
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.indent {
+/* .indent {
     margin-left: 4em;
-}
+} */
 .container {
     display: flex;
     flex-direction: row;
@@ -80,7 +83,7 @@ select{
     margin: 0;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .content {
         width: 100%;
         padding: 0 15px;
@@ -88,4 +91,4 @@ select{
     .indent {
         margin-left: 2em;
     }
-}
+} */
