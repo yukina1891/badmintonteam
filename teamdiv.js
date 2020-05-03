@@ -16,7 +16,7 @@ function main() {
         total_num++;
         n++
     }
-    
+
     divGender();
     if(or_gender) {
         var team1 = construct(member[0]);
@@ -25,6 +25,7 @@ function main() {
     } else {
         ans_team = construct(member[0]);
     }
+    finalSort();
     print(ans_team);
 }
 
@@ -193,14 +194,14 @@ function combine(team1, team2) {
     var array = team1.slice(p, team1.length);
     team1.splice(p, team1.length - p);
     team1 = array.concat(team1);
-    var sum1 = sum(team1);
+    var sum1 = sum(team1);              // sun1[i]は、チームiの強さ値の総和
     var sum2 = sum(team2);
     for(var i = 0; i < team_num; i++) {
         ave += sum1[i] + sum2[i];
         num_ave += team1[i].length + team2[i].length;
     }
-    ave = ave / num_ave;
-    num_ave = num_ave / team_num;
+    ave = ave / num_ave;         // 全ての人の強さの値の和
+    num_ave = num_ave / team_num;       // 1チーム当たりの平均人数
     var flag = 1;
     loop: while(flag) {
         flag = 0;
@@ -241,6 +242,20 @@ function combine(team1, team2) {
             }       
         }
         return s;
+    }
+}
+
+function finalSort() {            // 学年ごとにソートし人数を数える関数
+    for(var i = 0; i < team_num; i++) {
+        for(var j = 0; j < ans_team[i].length; j++) {
+            var max = j;
+            for(var k = j+1; k < ans_team[i].length; k++) {
+                if(ans_team[i][k][1] > ans_team[i][max][1]) max = k;
+            }
+            var x = ans_team[i][j];
+            ans_team[i][j] = ans_team[i][max];
+            ans_team[i][max] = x;
+        }
     }
 }
 
