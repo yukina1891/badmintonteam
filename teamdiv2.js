@@ -16,11 +16,9 @@ var teamave_num_Gen = [];         // 1チームあたりの男女別人数
 var teamave_num_Gre = [];         // 1チームあたりの学年別人数
 var teamave_num_GreGen = [];      // 1チームあたりの学年男女別の平均人数
 
-var ave_lev;                 // 全員の強さの平均
+var ave_lev;                      // 全員の強さの平均
 var ave_lev_Te = [];              // チームごとの強さの平均
 
-
-var ans_team;
 var maxGrade = 6;
 
 function main() {
@@ -172,11 +170,12 @@ function averagingLevel() {
     while(flag) {
         flag = 0;
         for(i = 0; i < team_num; i++) {
-            for(j = 0; j < team[i].length; j++) {
+            loop: for(j = 0; j < team[i].length; j++) {
                 for(k = (i+1) % team_num; k != i; k = (k+1) % team_num) {
                     for(l = 0; l < team[k].length; l++) {
                         if(check()) {
-
+                            flag = 1;
+                            // continue loop;
                         }
                     }
                 }
@@ -199,13 +198,11 @@ function averagingLevel() {
         if((Math.abs(p - ave_lev) + Math.abs(q - ave_lev)) >= (Math.abs(ave_lev_Te[i] - ave_lev) + Math.abs(ave_lev_Te[k] - ave_lev))) return false;
 
         change(i, j, k, l);
-        ave_lev_Te[i] = p;
-        ave_lev_Te[k] = q;
         return true;
     }
 }
 
-function change(i, j, k, l) {
+function change(i, j, k, l) {          // チームiのj番目の人とチームkのl番目の人を交換
     num_TeGen[i][team[i][j][2]]--;
     num_TeGre[i][team[i][j][1]]--;
     num_TeGreGen[i][team[i][j][1]][team[i][j][2]]--;
@@ -222,6 +219,9 @@ function change(i, j, k, l) {
     num_TeGre[k][team[k][l][1]]--;
     num_TeGreGen[k][team[k][l][1]][team[k][l][2]]++;
 
+    ave_lev_Te[i] = (ave_lev_Te[i] * team[i].length - team[i][j][3] + team[k][l][3]) / team[i].length;
+    ave_lev_Te[k] = (ave_lev_Te[k] * team[k].length - team[k][l][3] + team[i][j][3]) / team[k].length;
+
     var x = team[i][j];
     team[i][j] = team[k][l];
     team[k][l] = x;
@@ -230,13 +230,10 @@ function change(i, j, k, l) {
 function print() {
     var answerList = [];
     for(var i = 0; i < team_num; i++) {
-        // var average = 0;
         answerList.push('<div class="item"><div class="box-title">チーム' + (i+1) + '</div><p>');
         for (var j = 0; j < team[i].length; j++){
             answerList.push(team[i][j][0] + '<br>');
-            // average += team[i][j][3];
         }
-        // average = (average / team[i].length).toFixed(2);
         answerList.push('</p><p>強さの平均：' + ave_lev_Te[i].toFixed(2) + '</p></div>');
     }
     document.getElementById('output').innerHTML = answerList.join('');
